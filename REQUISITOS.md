@@ -13,11 +13,11 @@ se o app fizer algo diferente do que está aqui, encontramos um bug.
 | ID | Regra |
 |---|---|
 | CAT-01 | A página inicial lista todos os produtos e mostra "N produtos encontrados" (ou "1 produto encontrado"). |
-| CAT-02 | A busca procura o texto no **nome** do produto e **não diferencia maiúsculas de minúsculas** ("caneca", "Caneca" e "CANECA" encontram a mesma coisa). Espaços no começo e no fim são ignorados. |
+| CAT-02 | A busca procura o texto no **nome** do produto e **não diferencia maiúsculas de minúsculas** ("caneca", "Caneca" e "CANECA" encontram a mesma coisa). Espaços no começo e no fim são ignorados. | -
 | CAT-03 | O filtro de categoria mostra só os produtos daquela categoria. "Todas" mostra tudo. Busca e categoria podem ser usadas juntas. |
 | CAT-04 | A ordenação pode ser por relevância (ordem original), menor preço ou maior preço. |
 | CAT-05 | Quando nenhum produto combina com os filtros, aparece "Nenhum produto encontrado.". |
-| CAT-06 | Produto com estoque 0 mostra a etiqueta "Esgotado" e **não pode ser adicionado ao carrinho** (botão desabilitado), tanto no catálogo quanto na página do produto. |
+| CAT-06 | Produto com estoque 0 mostra a etiqueta "Esgotado" e **não pode ser adicionado ao carrinho** (botão desabilitado), tanto no catálogo quanto na página do produto. | -
 
 ## 2. Página do produto
 
@@ -32,9 +32,9 @@ se o app fizer algo diferente do que está aqui, encontramos um bug.
 
 | ID | Regra |
 |---|---|
-| CAR-01 | O contador do cabeçalho mostra o **total de unidades** no carrinho (soma das quantidades). Ex.: 2 canecas + 1 mouse = 3. |
+| CAR-01 | O contador do cabeçalho mostra o **total de unidades** no carrinho (soma das quantidades). Ex.: 2 canecas + 1 mouse = 3. | -
 | CAR-02 | Adicionar um produto que já está no carrinho soma as quantidades. |
-| CAR-03 | A quantidade de um produto no carrinho **nunca passa do estoque**. Se o usuário tentar passar, a quantidade fica igual ao estoque. Isso vale ao adicionar e ao aumentar a quantidade no carrinho. |
+| CAR-03 | A quantidade de um produto no carrinho **nunca passa do estoque**.  Se o usuário tentar passar, a quantidade fica igual ao estoque. Isso vale ao adicionar e ao aumentar a quantidade no carrinho. | -
 | CAR-04 | A quantidade mínima no carrinho é 1 (botão "−" desabilitado). Para tirar o produto, usa-se "Remover". |
 | CAR-05 | Subtotal = soma de (preço × quantidade) de todos os itens. |
 | CAR-06 | Carrinho vazio mostra "Seu carrinho está vazio.". |
@@ -45,13 +45,13 @@ se o app fizer algo diferente do que está aqui, encontramos um bug.
 | Código | Efeito |
 |---|---|
 | `PROMO10` | 10% de desconto no subtotal (arredondado para o centavo mais próximo). |
-| `DESCONTO50` | R$ 50,00 de desconto no subtotal. **O total dos produtos nunca pode ficar negativo**: se o subtotal for menor que R$ 50,00, o desconto é igual ao subtotal. |
+| `DESCONTO50` | R$ 50,00 de desconto no subtotal. **O total dos produtos nunca pode ficar negativo**: se o subtotal for menor que R$ 50,00, o desconto é igual ao subtotal. | -
 | `FRETEGRATIS` | Zera o frete. Não dá desconto nos produtos. |
 | `NATAL2025` | 20% de desconto, válido **até 31/12/2025** (inclusive). Depois disso: "Cupom expirado". |
 
 | ID | Regra |
 |---|---|
-| CUP-01 | O código não diferencia maiúsculas de minúsculas e ignora espaços nas pontas. |
+| CUP-01 | O código não diferencia maiúsculas de minúsculas e ignora espaços nas pontas. | -
 | CUP-02 | Código que não existe: "Cupom inválido". Código vazio: "Digite um cupom". |
 | CUP-03 | Só um cupom por vez. Ele pode ser removido com "Remover cupom". |
 
@@ -85,15 +85,15 @@ se o app fizer algo diferente do que está aqui, encontramos um bug.
 | CHK-01 | As mensagens de erro aparecem ao clicar em "Confirmar pedido". Com erro, o pedido não é enviado. |
 | CHK-02 | O resumo do checkout recalcula o frete conforme o CEP digitado. |
 | CHK-03 | Formas de pagamento: Cartão de crédito, Pix ou Boleto. **Nenhum pagamento é processado de verdade.** |
-| CHK-04 | Enquanto o pedido é enviado, o botão mostra "Processando..." e fica desabilitado. |
-| CHK-05 | Depois de confirmado: o usuário vai para a página "Pedido confirmado!" com o número do pedido (`PED-0001`, `PED-0002`, ...) e **o carrinho é esvaziado** (inclusive o cupom). |
+| CHK-04 | Enquanto o pedido é enviado, o botão mostra "Processando..." e fica desabilitado. | -
+| CHK-05 | Depois de confirmado: o usuário vai para a página "Pedido confirmado!" com o número do pedido (`PED-0001`, `PED-0002`, ...) e **o carrinho é esvaziado** (inclusive o cupom). | ---
 
 ## 7. Meus pedidos
 
 | ID | Regra |
 |---|---|
 | PED-01 | Lista os pedidos feitos, do mais recente para o mais antigo, com número, data, quantidade de itens e **total**. |
-| PED-02 | O total mostrado na lista é **o mesmo total** da confirmação do pedido (com desconto e frete). |
+| PED-02 | O total mostrado na lista é **o mesmo total** da confirmação do pedido (com desconto e frete). | ---
 | PED-03 | Os pedidos ficam só na memória: **ao recarregar a página a lista some**. |
 | PED-04 | Sem pedidos: "Você ainda não fez nenhum pedido.". |
 
